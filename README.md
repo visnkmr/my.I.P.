@@ -1,12 +1,11 @@
 # my.I.P.
+<img src="https://github.com/visnkmr/my.I.P./blob/master/ip.png" width="100">
 A minimum sized android app that shows you your IP address and the local details of your IP address. The data used in the app has been obtained from https://ipvigilante.com/json/full.
 
 
 # Latest Changelog
 - First Version
 - Black themed the whole app
-
-<img src="https://github.com/visnkmr/my.I.P./blob/master/ip.png" width="100">
 
 ## Download the [apk](https://github.com/visnkmr/my.I.P./raw/master/myIP.apk) to try the app.
 
