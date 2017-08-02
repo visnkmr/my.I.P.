@@ -5,11 +5,11 @@ A simple project which shows the implementation of StringRequest() and using JSO
 
 
 # Latest Changelog
-- First Version
-- Black themed the whole app
-- Referesh button not working
+- First Version development completed.
+-- Black themed the whole app.
+-- Referesh button working.
 
-## Download the [apk](https://github.com/visnkmr/my.I.P./raw/master/myIP.apk) to try the app.
+## Download the [apk](https://github.com/visnkmr/my.I.P./raw/master/my.i.p.apk) to try the app.
 
 # Screenshots
 <img src="https://github.com/visnkmr/my.I.P./blob/master/photo_2017-07-30_23-35-43.jpg" width="300">
