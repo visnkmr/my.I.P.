@@ -7,16 +7,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.android.volley.Cache;
-import com.android.volley.Network;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.BasicNetwork;
-import com.android.volley.toolbox.DiskBasedCache;
-import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -29,43 +26,50 @@ public class MainActivity extends Activity {
     // URL of object to be parsed
     String url = "https://ipvigilante.com/json/full";
     // Defining the Volley request queue that handles the URL request concurrently
-    RequestQueue requestQueue;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        RequestQueue mRequestQueue;
-        ipaddr=findViewById(R.id.ipaddr);
-        dnametv=findViewById(R.id.dname);
-        cnametv=findViewById(R.id.cname);
-        pcodetv =findViewById(R.id.pcode);
-        radtv=findViewById(R.id.rad);
-        citynametv=findViewById(R.id.cityname);
-        t1=findViewById(R.id.text1);
-        t2=findViewById(R.id.text2);
-        refreshbtn=findViewById(R.id.refresh);
+        ipaddr = findViewById(R.id.ipaddr);
+        dnametv = findViewById(R.id.dname);
+        cnametv = findViewById(R.id.cname);
+        pcodetv = findViewById(R.id.pcode);
+        radtv = findViewById(R.id.rad);
+        citynametv = findViewById(R.id.cityname);
+        t1 = findViewById(R.id.text1);
+        t2 = findViewById(R.id.text2);
+        refreshbtn = findViewById(R.id.refresh);
+        dnametv.setText("Loading...");
+        sendRequest();
+        refreshbtn.setOnClickListener(new View.OnClickListener() {
 
-// Instantiate the cache
-        Cache cache = new DiskBasedCache(getCacheDir(), 1024 * 1024); // 1MB cap
-
-// Set up the network to use HttpURLConnection as the HTTP client.
-        Network network = new BasicNetwork(new HurlStack());
-
-// Instantiate the RequestQueue with the cache and network.
-        mRequestQueue = new RequestQueue(cache, network);
-
-// Start the queue
-        mRequestQueue.start();
-
-// Formulate the request and handle the response.
+            @Override
+            public void onClick(View view) {
+                dnametv.setText("Loading...");
+                ipaddr.setText("");
+                cnametv.setText("");
+                citynametv.setText("");
+                pcodetv.setText("");
+                radtv.setText("");
+                t1.setVisibility(View.GONE);
+                t2.setVisibility(View.GONE);
+                sendRequest();
+            }
+        });
+    }
+    private void sendRequest() {
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
+
+
+                    // Formulate the request and handle the response.
                     @Override
                     public void onResponse(String response) {
-                        String resultval =response;
+                        String resultval = response;
                         Log.e(TAG, "Response from url: " + resultval);
-                        JSONObject jObject,data;
+                        JSONObject jObject, data;
                         try {
                             jObject = new JSONObject(response);
                             String mResponse = jObject.getString("data");
@@ -81,7 +85,7 @@ public class MainActivity extends Activity {
                             String pcode = data.getString("postal_code");
                             pcodetv.setText(pcode);
                             String rad = data.getString("accuracy_radius");
-                            String radu=rad+"km";
+                            String radu = rad + "km";
                             radtv.setText(radu);
                             t1.setVisibility(View.VISIBLE);
                             t2.setVisibility(View.VISIBLE);
@@ -99,11 +103,20 @@ public class MainActivity extends Activity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                      dnametv.setText("No Internet Connection!");  // Handle error
+                        dnametv.setText("No Internet Connection!");
+                        ipaddr.setText("");
+                        cnametv.setText("");
+                        citynametv.setText("");
+                        pcodetv.setText("");
+                        radtv.setText("");
+                        t1.setVisibility(View.GONE);
+                        t2.setVisibility(View.GONE);
+                        // Handle error
                     }
                 });
 
 // Add the request to the RequestQueue.
+        RequestQueue mRequestQueue = Volley.newRequestQueue(this);
         mRequestQueue.add(stringRequest);
     }
 }
