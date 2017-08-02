@@ -2,7 +2,7 @@
 <img src="https://github.com/visnkmr/my.I.P./blob/master/ip.png" width="100">
 A minimum sized android app that shows you your IP address and its local detail.
 
-## Useful to test if a VPN app is working
+### Useful to test if a VPN app is working
 
 # Latest Changelog
 - First Version development completed.
