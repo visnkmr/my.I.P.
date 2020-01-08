@@ -1,4 +1,3 @@
-# my.I.P.
 ### An android app that shows you your IP address and your local detail.
 
 The latest version is available via
