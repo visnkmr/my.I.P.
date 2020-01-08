@@ -1,15 +1,13 @@
 # my.I.P.
-<img src="https://github.com/visnkmr/my.I.P./blob/master/ip.png" width="100">
-An android app that shows you your IP address and your local detail.
+### An android app that shows you your IP address and your local detail.
 
-### Useful to test if a VPN app is working
+The latest version is available via
 
-# Latest Changelog
-- First Version development completed.
--- Black themed the whole app.
--- Referesh button working.
+[![Get it on Google Play](https://play.google.com/intl/en_us/badges/images/badge_new.png)](https://play.google.com/store/apps/details?id=io.github.visnkmr.myip)
 
-## Download the [apk](https://github.com/visnkmr/my.I.P./raw/master/my.i.p.apk) to try the app.
+[<img src="https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal2/res/images/amazon-appstore-badge-english-white.png" data-canonical-src="" alt-text="" width="153" />](https://www.amazon.com/My-address-location-VPN-status/dp/B077TV1QBX)
+
+### Useful to test if VPN app is working
 
 # Screenshots
 <img src="https://github.com/visnkmr/my.I.P./blob/master/photo_2017-07-30_23-35-43.jpg" width="300">
