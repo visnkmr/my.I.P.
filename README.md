@@ -7,7 +7,7 @@ The latest version is available via
 ### VPN Status: How to Check if VPN is working using My IP
 If the IP address location is not your present location, or location set by you, it means that your VPN, if any, is working.
 
-# Screenshots
-<img src="https://github.com/visnkmr/my.I.P./blob/master/photo_2017-07-30_23-35-43.jpg" width="150">
+<!-- # Screenshots
+<img src="https://github.com/visnkmr/my.I.P./blob/master/photo_2017-07-30_23-35-43.jpg" width="150"> -->
 
 
